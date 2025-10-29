@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public float speed = 10f;
     public int jumpforce = 100;
     private int x = 0;
+    private bool isGrounded = false;
 
     void Update()
     {
@@ -28,10 +29,27 @@ public class Player : MonoBehaviour
         Vector3 direction = forward * moveVertical + right * moveHorizontal;
         rb.AddForce(direction * speed);
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)&& isGrounded == true)
         {
             Debug.Log("Space was pressed");
             rb.AddForce(Vector3.up * jumpforce);
         }
     }
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+
+    }
+
+    void OnCollisionExit(Collision other)
+    {
+        if (other.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
 }
+
