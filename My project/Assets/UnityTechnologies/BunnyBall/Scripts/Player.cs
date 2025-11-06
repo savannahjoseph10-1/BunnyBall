@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public int jumpforce = 100;
     private int x = 0;
     private bool isGrounded = false;
+    private bool doubleJump = false;
 
     void Update()
     {
@@ -33,6 +34,13 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Space was pressed");
             rb.AddForce(Vector3.up * jumpforce);
+            doubleJump = true;
+        }
+
+        if (isGrounded == false && doubleJump == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector3.up * jumpforce);
+            doubleJump = false;
         }
     }
     void OnCollisionEnter(Collision other)
