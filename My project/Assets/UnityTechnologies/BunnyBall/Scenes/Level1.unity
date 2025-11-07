@@ -2824,6 +2824,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7443251220583942597, guid: f757b320558b7984c96b025d56b0fd51,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7443251220583942598, guid: f757b320558b7984c96b025d56b0fd51,
         type: 3}
       propertyPath: m_Name
@@ -2842,12 +2847,12 @@ PrefabInstance:
     - target: {fileID: 7443251220583942649, guid: f757b320558b7984c96b025d56b0fd51,
         type: 3}
       propertyPath: speed
-      value: 0.5
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7443251220583942649, guid: f757b320558b7984c96b025d56b0fd51,
         type: 3}
       propertyPath: jumpforce
-      value: 400
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7443251220583942649, guid: f757b320558b7984c96b025d56b0fd51,
         type: 3}
